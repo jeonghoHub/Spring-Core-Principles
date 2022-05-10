@@ -1,18 +1,22 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
+import hello.core.discount.member.Grade;
+import hello.core.discount.member.Member;
+import hello.core.discount.member.MemberService;
+import hello.core.discount.member.MemberServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import javax.swing.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MemberServiceTest {
 
     MemberService memberService;
+
     @BeforeEach
     void setUp() {
-        memberService = new MemberServiceImpl();
+        memberService = new AppConfig().memberService();
     }
 
     @Test
